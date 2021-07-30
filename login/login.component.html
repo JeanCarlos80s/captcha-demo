@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center align-items-center login-container">
+  <div class="card">
+    <div class="card-header">
+      CAPTCHA
+    </div>
+    <div class="card-body">
+      <div id="captcha" class="captcha"></div>
+      <form novalidate [formGroup]="captchaForm">
+        <div class="form-group row mb-2">
+          <label class="col-md-12 col-form-label" for="reCaptcha">ReCaptcha</label>
+          <div class="col-md-12">
+            <input id="reCaptcha" class="form-control" formControlName="reCaptcha" />
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary mr-3" (click)="matchCaptcha()">Enviar</button>
+        <button type="button" class="btn btn-primary mr-3" (click)="reset()">Restart</button>
+        <button type="button" class="btn btn-success" [disabled]="!isValid">Faze Login</button>
+      </form>
+      <div id="errCaptcha" class="errmsg"></div>
+    </div>
+  </div>
+</div>
